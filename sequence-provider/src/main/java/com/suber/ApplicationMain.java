@@ -9,6 +9,16 @@ public class ApplicationMain {
 
     public static void main(String[] args) {
         SpringApplication.run(ApplicationMain.class);
+        while (true) {
+            synchronized (ApplicationMain.class) {
+                try {
+                    ApplicationMain.class.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
     }
 
 
