@@ -29,7 +29,7 @@ do
 done
 echo "docker build  -t  $rep/$appName:$tag"
 echo "docker push $rep/$appName:$tag"
-echo "docker run  -i restart="alwasy" --name Zkconsole $rep/$appName:$tag"
+echo "docker run  -i  --name Zkconsole $rep/$appName:$tag"
 
 docker stop $appName
 docker rm   $appName
