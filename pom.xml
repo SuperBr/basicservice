@@ -10,12 +10,12 @@
     </parent>
 
     <groupId>suberb</groupId>
-    <artifactId>sequence</artifactId>
+    <artifactId>basicservice</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>sequence-api</module>
-        <module>sequence-provider</module>
+        <module>basicservice-api</module>
+        <module>basicservice-provider</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
