@@ -1,4 +1,4 @@
-while getopts ":r:a:t:p:port:" opt
+while getopts ":r:a:t:p:d:" opt
 do
     case $opt in
         r)
@@ -17,7 +17,7 @@ do
             echo "参数push的值$OPTARG"
             push=$OPTARG
         ;;
-         port)
+         d)
          echo "参数port的值$OPTARG"
          port=$OPTARG
          ;;
