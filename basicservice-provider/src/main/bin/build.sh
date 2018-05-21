@@ -1,4 +1,4 @@
-while getopts ":r:a:t:p:d:" opt
+while getopts ":r:a:t:p:d:m:" opt
 do
     case $opt in
         r)
@@ -21,6 +21,10 @@ do
          echo "参数port的值$OPTARG"
          port=$OPTARG
          ;;
+         m)
+         echo "参数dockerport的值$OPTARG"
+         dockerport=$OPTARG
+         ;;
     esac
 done
 echo "docker build  -t  $rep/$appName:$tag"
@@ -38,4 +42,4 @@ echo "push start!!!"
 docker push $rep/$appName:$tag
 fi
 
-docker run  -d  -p $port:9091 --name $appName $rep/$appName:$tag
+docker run  -d  -p $port:$dockerport --name $appName $rep/$appName:$tag
