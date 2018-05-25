@@ -39,7 +39,7 @@ public class BeanConfig {
         if (stat != null) {
             if (zooConf.getAutoAdd()) {
                 if (Integer.valueOf(zooConf.getGroupNum()) < 9) {
-                    zooConf.setGroupNum((Integer.valueOf(zooConf.getGroupNum() + 1)).toString());
+                    zooConf.setGroupNum((Integer.valueOf(Integer.valueOf(zooConf.getGroupNum())+1).toString()));
                 }else {
                     throw new Exception("room and group is repeat! and group is max!");
                 }
