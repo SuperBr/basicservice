@@ -31,7 +31,7 @@ public class ZookeeperConfig {
         Assert.notNull(groupNum, "groupNum is null");
         Assert.notNull(roomNum, "roomNum is null");
 
-        return this.getGroupNum().toString()+this.groupNum;
+        return this.roomNum.toString()+this.groupNum;
     }
 
     public String getZookeeperConnection() {
