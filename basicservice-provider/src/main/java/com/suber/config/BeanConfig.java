@@ -38,8 +38,13 @@ public class BeanConfig {
         Stat stat = client.checkExists().forPath(getBasePath(zooConf.getPath()));
         if (stat != null) {
             if (zooConf.getAutoAdd()) {
-                Integer path = Integer.valueOf(zooConf.getPath()) + 1;
-                client.create().withMode(CreateMode.EPHEMERAL).forPath(getBasePath(path.toString()));
+                if (Integer.valueOf(zooConf.getGroupNum()) < 9) {
+                    zooConf.setGroupNum((Integer.valueOf(zooConf.getGroupNum() + 1)).toString());
+                }else {
+                    throw new Exception("room and group is repeat! and group is max!");
+                }
+                client.create().withMode(CreateMode.EPHEMERAL).forPath(getBasePath(zooConf.getPath()));
+
             } else {
                 throw new Exception("room and group is repeat!");
             }
