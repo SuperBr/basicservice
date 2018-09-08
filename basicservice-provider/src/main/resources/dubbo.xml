@@ -18,4 +18,7 @@
     <!-- 和本地bean一样实现服务 -->
     <dubbo:service interface="com.suber.api.ISequence" ref="sequence" />
 
+
+    <dubbo:monitor address="zookeeper://${zookeeper.connectionInfo}"></dubbo:monitor>
+
 </beans>
